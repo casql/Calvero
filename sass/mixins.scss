@@ -1,0 +1,17 @@
+// Folha de estilos com todas as mixins
+
+// Transições
+@mixin transition($elemento, $tempo, $ease) {
+    -webkit-transition: $elemento $tempo $ease;
+    -moz-transition: $elemento $tempo $ease;
+    -ms-transition: $elemento $tempo $ease;
+    transition: $elemento $tempo $ease;
+}
+
+// Border Radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}

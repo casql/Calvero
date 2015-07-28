@@ -1,0 +1,26 @@
+// Folha de estilos principal do tema Calvero
+// As linhas seguintes realizam as ações descritas:
+
+// Importa os resets presentes em reset.scss
+@import 'reset.scss';
+
+// Importa a css específica para elementos do Wordpress
+@import 'wordpress.scss';
+
+// Importa Bootstrap
+@import '../css/bootstrap.min.css';
+
+// Importa as fontes localizadas em Google Fonts
+// Roboto
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100);
+// Alegreya
+@import url(http://fonts.googleapis.com/css?family=Alegreya:400,900italic,900,700italic,700,400italic);
+
+// Importa as variáveis scss
+@import 'variaveis.scss';
+
+// Importa as mixins
+@import 'mixins.scss';
+
+// Importa a scss básica do tema Calvero
+@import 'basico.scss';

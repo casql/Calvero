@@ -1,0 +1,249 @@
+// Folha de estilos com os elementos básicos da página
+
+// Definição básica de tipografia do corpo da página
+body {
+    font: normal 400 14px/1.5 $sans-serif;
+}
+
+// Define os principais elementos como blocos
+header, footer, nav, section {
+    display: block;
+}
+
+// Definição básica para estilo de links (estilo um reset)
+a {color: inherit;}
+
+// Principal container da página
+.main-wrapper {
+    position:relative;
+    left:0;
+    
+    // Mixin Transition
+    @include transition(all, 0.2s, ease);
+}
+
+// Definições para o menu de navegação
+
+.nav-menu {
+    padding:0.75em 1.5em;
+    
+    header {
+        font-size: 1.5em;
+        line-height: 1.5;
+        
+        margin-bottom: 2em;
+    }
+}
+
+// Definição da div do logo em posição fixa
+.calvero-logo {width:150px;position:fixed; display: inline-block; position: fixed; left: 0; z-index:9999; @include transition( all, 0.3s, ease)}
+
+// Definições dos elementos que compoem a nav
+.nav-container {
+    width:250px;
+    height:100vh;
+    position:fixed;
+    margin-top:0px;
+    right: -250px;
+    
+    @include transition(all, 0.3s, ease);
+}
+
+// Container do botão do menu
+.btn-nav-container {
+    width:3em;
+    height:3em;
+    
+    display: block;
+    position: absolute;
+    right:250px;
+    z-index:1;
+    
+    cursor: pointer;
+    
+    @include transition(all, 0.3s, ease);
+}
+
+.btn-nav {
+    margin:0px auto;
+    width:50%;
+    height:3px;
+    display: block;
+    background: $branco;
+    position:relative;
+    top:1.3em;
+    
+    &:before {
+        content:"";
+        display: block;
+        position: relative;
+        background: $branco;
+        height: 3px;
+        top:-250%;
+    }
+    
+    &:after{
+        content:" ";
+        display: block;
+        position: relative;
+        background: $branco;
+        height: 3px;
+        top:125%;
+    }
+}
+
+.calvero-menu {
+    // Definições principais
+    margin: 0px;
+    padding: 0.5em 1.5em;
+    width:250px;
+    height:100vh;
+    position:absolute;
+    z-index: 999;
+    
+    overflow: auto;
+    color:$branco;
+    
+    .menu-header {
+        font-size:1.3em;
+        margin-bottom:2em;
+    }
+    
+    ul {
+        li {
+            opacity: 0.5;
+            line-height: 1.8;
+            a {
+                color:inherit;
+                text-decoration: none;
+            }
+            
+            &:hover{
+                opacity:1;
+            }
+        }
+    }
+    
+    section{
+        padding: 0em 0 2em;
+        
+        &:after{
+            content:"";
+            clear: both;
+            margin-top:2em;
+            width:1em;
+            height: 3px;
+            display: block;
+            background: $branco;
+        }
+        
+        &:last-child{
+            &:after {
+                display: none;
+            }
+        }
+        
+    }
+    
+    input {
+        border:0;
+        background-color: #151515;
+        padding:1em;
+        
+        @include transition(all, 0.3s, ease);
+        
+        &[type='text']{
+            background: url('../images/icons/pesquisar-opac-br.png') no-repeat right center / 15px;
+            &:focus {
+                border-bottom: 1px solid #656565;
+                @include transition(all, 0.3s, ease);
+            }
+        }
+    }
+    
+    @include transition(all, 0.3s, ease);
+}
+
+// Div com imagem inteira
+
+.imagem-destaque {
+    background: transparent url() no-repeat top center / cover;
+}
+
+.row {
+    width:100%;
+    padding: 4em;
+    margin:0 !important;
+    
+    position:relative;
+}
+
+.bloco {
+    position:relative;
+}
+
+.bloco-info-destaque {
+    position:absolute;
+    display: inline-block;
+    max-width:600px;
+    padding:1em 2.5em;
+    bottom:10%;
+    
+    a {color:inherit}
+    
+    .categoria {
+        
+    }
+    
+    .titulo {
+        font-weight: 700;
+    }
+    .autor {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+// Artigos
+.artigo-single {
+    font: normal normal 1.5em/1.8 $serif;
+}
+
+.header-single {position: relative; top:0; left:0; background: transparent url() no-repeat top center / cover}
+
+
+// Alinhar blocos ao centro
+.centralizado {margin: 0px auto;}
+
+// Limpar Floats
+.limpa-float {float:none;}
+
+// Cores de Fundos
+.fundo-preto {background: $preto;}
+.fundo-branco {background: $branco;}
+.fundo-cinza {background: $cinza-claro;}
+
+// Cores de texto
+.texto-branco {color:$branco}
+.texto-preto {color:$preto}
+.texto-amarelo {color: $amarelo-calvero}
+
+// Famíias de fontes
+.serif {font-family: $serif;}
+.sans-serif {font-family: $sans-serif;}
+
+// Classes referentes à funçao de abertura do menu
+.appear-from-right {right:0; @include transition(all, 0.1s, ease);}
+.push-to-left {left: -250px; @include transition(all, 0.5s, ease);}
+.hide-behind-nav {right: 0em; z-index:9999; @include transition(all, 0.3s, ease);}
+.turn-x {
+    background: transparent !important;
+    // Before
+    &:before {top:0%; transform: rotate(45deg); @include transition(all, 0.5s, ease);}
+    // After
+    &:after{top:-100%; transform: rotate(-45deg); @include transition(all, 0.5s, ease);}
+}

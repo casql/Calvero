@@ -1,0 +1,515 @@
+/* =Reset
+-------------------------------------------------------------- */
+@import url(../css/bootstrap.min.css);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100);
+@import url(http://fonts.googleapis.com/css?family=Alegreya:400,900italic,900,700italic,700,400italic);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+html {
+  font-size: 62.5%;
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+  overflow-y: scroll;
+  /* Keeps page centred in all browsers regardless of content height */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */ }
+
+body {
+  background: #fff; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  /* tables still need 'cellspacing="0"' in the markup */
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:hover,
+a:active {
+  /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+  outline: 0; }
+
+a img {
+  border: 0; }
+
+/* Alignment */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto; }
+
+/* Text meant only for screen readers */
+.assistive-text {
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important; }
+
+/* =Menu
+----------------------------------------------- */
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%; }
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0; }
+
+.main-navigation li {
+  float: left;
+  position: relative; }
+
+.main-navigation a {
+  display: block;
+  text-decoration: none; }
+
+.main-navigation ul ul {
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  display: none;
+  float: left;
+  position: absolute;
+  top: 1.5em;
+  left: 0;
+  z-index: 99999; }
+
+.main-navigation ul ul ul {
+  left: 100%;
+  top: 0; }
+
+.main-navigation ul ul a {
+  width: 200px; }
+
+.main-navigation ul li:hover > ul {
+  display: block; }
+
+/* Small menu */
+.menu-toggle {
+  cursor: pointer; }
+
+.main-small-navigation .menu {
+  display: none; }
+
+/* =Content
+----------------------------------------------- */
+.hentry {
+  margin: 0 0 1.5em; }
+
+.entry-meta {
+  clear: both; }
+
+.byline {
+  display: none; }
+
+.single .byline,
+.group-blog .byline {
+  display: inline; }
+
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0; }
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em; }
+
+/* =Asides
+----------------------------------------------- */
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none; }
+
+/* =Media
+----------------------------------------------- */
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+  max-width: 100%;
+  /* Fluid images for posts, comments, and widgets */ }
+
+.site-header img,
+.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"] {
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
+
+.site-header img,
+.entry-content img,
+img.size-full {
+  max-width: 100%;
+  width: auto;
+  /* Prevent stretching of full-size images with height and width attributes in IE8 */ }
+
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+.wp-caption {
+  border: 1px solid #ccc;
+  max-width: 100%; }
+
+.wp-caption.aligncenter,
+.wp-caption.alignleft,
+.wp-caption.alignright {
+  margin-bottom: 1.5em; }
+
+.wp-caption img {
+  display: block;
+  margin: 1.2% auto 0;
+  max-width: 98%; }
+
+.wp-caption-text {
+  text-align: center; }
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0; }
+
+.site-content .gallery {
+  margin-bottom: 1.5em; }
+
+.site-content .gallery a img {
+  border: none;
+  height: auto;
+  max-width: 90%; }
+
+.site-content .gallery dd {
+  margin: 0; }
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+/* =Navigation
+----------------------------------------------- */
+.site-content .site-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+
+.site-content .nav-previous {
+  float: left;
+  width: 50%; }
+
+.site-content .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
+
+/* =Comments
+----------------------------------------------- */
+/* =Widgets
+----------------------------------------------- */
+.widget {
+  margin: 0 0 1.5em; }
+
+/* Search widget */
+#searchsubmit {
+  display: none; }
+
+body {
+  font: normal 400 14px/1.5 "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
+
+header, footer, nav, section {
+  display: block; }
+
+a {
+  color: inherit; }
+
+.main-wrapper {
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+
+.nav-menu {
+  padding: 0.75em 1.5em; }
+  .nav-menu header {
+    font-size: 1.5em;
+    line-height: 1.5;
+    margin-bottom: 2em; }
+
+.calvero-logo {
+  width: 150px;
+  position: fixed;
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.nav-container {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  margin-top: 0px;
+  right: -250px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.btn-nav-container {
+  width: 3em;
+  height: 3em;
+  display: block;
+  position: absolute;
+  right: 250px;
+  z-index: 1;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.btn-nav {
+  margin: 0px auto;
+  width: 50%;
+  height: 3px;
+  display: block;
+  background: #fff;
+  position: relative;
+  top: 1.3em; }
+  .btn-nav:before {
+    content: "";
+    display: block;
+    position: relative;
+    background: #fff;
+    height: 3px;
+    top: -250%; }
+  .btn-nav:after {
+    content: " ";
+    display: block;
+    position: relative;
+    background: #fff;
+    height: 3px;
+    top: 125%; }
+
+.calvero-menu {
+  margin: 0px;
+  padding: 0.5em 1.5em;
+  width: 250px;
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  overflow: auto;
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .calvero-menu .menu-header {
+    font-size: 1.3em;
+    margin-bottom: 2em; }
+  .calvero-menu ul li {
+    opacity: 0.5;
+    line-height: 1.8; }
+    .calvero-menu ul li a {
+      color: inherit;
+      text-decoration: none; }
+    .calvero-menu ul li:hover {
+      opacity: 1; }
+  .calvero-menu section {
+    padding: 0em 0 2em; }
+    .calvero-menu section:after {
+      content: "";
+      clear: both;
+      margin-top: 2em;
+      width: 1em;
+      height: 3px;
+      display: block;
+      background: #fff; }
+    .calvero-menu section:last-child:after {
+      display: none; }
+  .calvero-menu input {
+    border: 0;
+    background-color: #151515;
+    padding: 1em;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .calvero-menu input[type='text'] {
+      background: url("../images/icons/pesquisar-opac-br.png") no-repeat right center/15px; }
+      .calvero-menu input[type='text']:focus {
+        border-bottom: 1px solid #656565;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease; }
+
+.imagem-destaque {
+  background: transparent url() no-repeat top center/cover; }
+
+.row {
+  width: 100%;
+  padding: 4em;
+  margin: 0 !important;
+  position: relative; }
+
+.bloco {
+  position: relative; }
+
+.bloco-info-destaque {
+  position: absolute;
+  display: inline-block;
+  max-width: 600px;
+  padding: 1em 2.5em;
+  bottom: 10%; }
+  .bloco-info-destaque a {
+    color: inherit; }
+  .bloco-info-destaque .titulo {
+    font-weight: 700; }
+  .bloco-info-destaque .autor {
+    font-weight: 700;
+    text-transform: uppercase; }
+  .bloco-info-destaque:hover {
+    text-decoration: underline; }
+
+.artigo-single {
+  font: normal normal 1.5em/1.8 "Alegreya", Times, Times New Roman, Georgia, serif; }
+
+.header-single {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: transparent url() no-repeat top center/cover; }
+
+.centralizado {
+  margin: 0px auto; }
+
+.limpa-float {
+  float: none; }
+
+.fundo-preto {
+  background: #000; }
+
+.fundo-branco {
+  background: #fff; }
+
+.fundo-cinza {
+  background: #eee; }
+
+.texto-branco {
+  color: #fff; }
+
+.texto-preto {
+  color: #000; }
+
+.texto-amarelo {
+  color: #FEE10A; }
+
+.serif {
+  font-family: "Alegreya", Times, Times New Roman, Georgia, serif; }
+
+.sans-serif {
+  font-family: "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
+
+.appear-from-right {
+  right: 0;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease; }
+
+.push-to-left {
+  left: -250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.hide-behind-nav {
+  right: 0em;
+  z-index: 9999;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.turn-x {
+  background: transparent !important; }
+  .turn-x:before {
+    top: 0%;
+    transform: rotate(45deg);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .turn-x:after {
+    top: -100%;
+    transform: rotate(-45deg);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+
+/*# sourceMappingURL=style.css.map */
