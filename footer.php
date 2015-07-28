@@ -27,7 +27,7 @@
             $('.nav-container').toggleClass('appear-from-right');
             $('.calvero-logo').toggleClass('push-to-left');
             $('.main-wrapper').toggleClass('push-to-left');
-            $('.btn-nav-container').toggleClass('hide-behind-nav');
+            $('.btn-nav-container').toggleClass('throw-inside-nav');
             $('.btn-nav').toggleClass('turn-x');
         });
     });

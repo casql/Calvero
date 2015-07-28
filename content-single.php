@@ -4,18 +4,19 @@
  * @since calvero 1.0
  */
 ?>
-<section class="artigo-single-wrapper content content-fluid">
-    <article id="<?php the_ID(); ?>" <?php post_class( 'artigo-single col-md-10 col-sm-10 limpa-float centralizado' ); ?> >
-        <div class="header-single">
-            <div class="imagem-destaque row" style="background-image:url(<?php thumb_uri()?>)">
-                <?php calvero_posted_on(); ?>
-            </div>
-            <?php the_title(); ?>
-        </div>
-
-        <?php the_content(); ?>
-        
-        <footer>
-        </footer><!-- .entry-meta -->
+<section class="single">
+    <div class="imagem-destaque" style="background-image:url(<?php thumb_uri(); ?>)"></div>
+    <article id="post-<?php the_ID(); ?>" <?php post_class( 'artigo col-md-8 col-sm-10 col-xs-10 limpa-float centralizado' ) ?> >
+        <header class="artigo-meta">
+            <p><?php the_category( ', ' ) ?></p>
+            <h1><?php the_title(); ?></h1>
+            <p class="autor"><?php the_author(); ?></p>
+        </header>
+        <section class="single-conteudo">
+            <?php the_content(); ?>
+        </section>
+        <footer class="single-footer">
+            
+        </footer>
     </article>
-</article><!-- #post-<?php the_ID(); ?> -->
+</section> <?php // Single ?>

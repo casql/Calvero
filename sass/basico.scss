@@ -1,17 +1,61 @@
 // Folha de estilos com os elementos básicos da página
 
+
+* {
+    margin:0;
+    padding:0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
 // Definição básica de tipografia do corpo da página
 body {
-    font: normal 400 14px/1.5 $sans-serif;
+    font: normal 400 1em/1.5 $sans-serif;
 }
 
 // Define os principais elementos como blocos
-header, footer, nav, section {
+header, footer, nav, section, h1, h2, h3, h4, h5, h6, .row {
     display: block;
 }
 
+
+// Tipografia
+
+// Parágrafo
+p {font-size:1em;}
+
+ul{
+    margin-left:1.5em;
+    
+    li {
+        list-style-type: "»";
+        font-size: .875em;
+        line-height: 1.8;
+    }
+}
+
+ol{
+    list-style: decimal;
+    margin-left:1.5em;
+    
+    li {
+        font-size: .875em;
+        line-height: 1.8;
+    }
+}
+
+blockquote {margin-left:2em;}
+
+strong, b {font-weight: 700;}
+italic, em {}
+u {}
+
 // Definição básica para estilo de links (estilo um reset)
-a {color: inherit;}
+a {color: inherit;text-decoration:underline;}
+
+h1 {font: normal 700 2.5em/1.2 $sans-serif}
+h2 {font: normal 700 2em/1.2 $sans-serif}
+h3 {font:normal 700 1.5em/1.2 $sans-serif}
 
 // Principal container da página
 .main-wrapper {
@@ -66,7 +110,7 @@ a {color: inherit;}
 
 .btn-nav {
     margin:0px auto;
-    width:50%;
+    width:40%;
     height:3px;
     display: block;
     background: $branco;
@@ -90,6 +134,9 @@ a {color: inherit;}
         height: 3px;
         top:125%;
     }
+    
+    // Mixin Transition
+    @include transition(all, 0.3s, ease);
 }
 
 .calvero-menu {
@@ -209,12 +256,27 @@ a {color: inherit;}
 }
 
 // Artigos
+.single {
+    font:normal normal 1em/1.5 $serif;
+    
+    .imagem-destaque {height:60vh; background: transparent url() no-repeat top center / cover}
+    .single-conteudo {
+    }
+    
+    .single-conteudo p{&:first-child{&:first-letter{float:left;font-size:4.7em}}}
+    
+    // Tipografia dentro do elemento
+    p {font-size: 1.3em; margin-bottom:1em}
+    ul {font-size:1.3em}
+    b, strong{font-size: inherit; font-weight: 700;}
+    em, italic {font-size:inherit;font-style:italic;}
+    blockquote{font-size:1.25em; font-style: italic; padding-left:1em; margin: 1.5em 0 1.5em 1.25em; border-left: 2px solid $cinza-claro;}
+    
+}
+
 .artigo-single {
     font: normal normal 1.5em/1.8 $serif;
 }
-
-.header-single {position: relative; top:0; left:0; background: transparent url() no-repeat top center / cover}
-
 
 // Alinhar blocos ao centro
 .centralizado {margin: 0px auto;}
@@ -239,7 +301,7 @@ a {color: inherit;}
 // Classes referentes à funçao de abertura do menu
 .appear-from-right {right:0; @include transition(all, 0.1s, ease);}
 .push-to-left {left: -250px; @include transition(all, 0.5s, ease);}
-.hide-behind-nav {right: 0em; z-index:9999; @include transition(all, 0.3s, ease);}
+.throw-inside-nav {right: 0em; z-index:9999; @include transition(all, 0.3s, ease);}
 .turn-x {
     background: transparent !important;
     // Before
