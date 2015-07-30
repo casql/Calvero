@@ -66,7 +66,7 @@ blockquote, q {
   quotes: "" ""; }
 
 a:focus {
-  outline: thin dotted; }
+  outline: none; }
 
 a:hover,
 a:active {
@@ -270,247 +270,108 @@ object {
 #searchsubmit {
   display: none; }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  line-height: 1.8; }
-
 body {
-  font: normal 400 1em/1.5 "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
+  font: normal 400 19px/1.8 "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
 
-header, footer, nav, section, h1, h2, h3, h4, h5, h6, .row {
+h1, h2, h3, h4, h5, h6 {
   display: block; }
 
+h1 {
+  font: normal 700 2em/1 "Roboto", Helvetica, "Helvetica Neue", sans-serif;
+  margin-bottom: .5em; }
+
+h2 {
+  font: normal 700 1.5em/1 "Roboto", Helvetica, "Helvetica Neue", sans-serif;
+  margin-bottom: .5em; }
+
+h3 {
+  font: normal 700 1.25em/1.5 "Roboto", Helvetica, "Helvetica Neue", sans-serif;
+  margin-bottom: .5em; }
+
+h4 {
+  font: italic 700 1.25em/1.8 "Alegreya", Times, Times New Roman, Georgia, serif;
+  margin-bottom: .5em; }
+
+p, b, strong, em, italic, ul, ol, li, a, u, del, span, blockquote {
+  font-size: inherit; }
+
 p {
-  font-size: 1em; }
+  margin: 0 0 1em; }
 
-ul {
-  margin-left: 1.5em; }
-  ul li {
-    list-style-type: "»";
-    font-size: .875em;
-    line-height: 1.8; }
+b, strong {
+  font-weight: 700;
+  font-weight: bold; }
 
-ol {
-  list-style: decimal;
-  margin-left: 1.5em; }
-  ol li {
-    font-size: .875em;
-    line-height: 1.8; }
+em, italic {
+  font-style: italic; }
 
-blockquote {
-  margin-left: 2em; }
+u {
+  text-decoration: underline; }
 
-strong, b {
-  font-weight: 700; }
+del {
+  text-decoration: line-through; }
 
 a {
   color: inherit;
   text-decoration: underline; }
+  a:hover {
+    text-decoration: underline; }
 
-h1 {
-  font: normal 700 2.5em/1.2 "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
+ul, ol {
+  margin: -0.5em 0 1.3em;
+  display: inline-block; }
 
-h2 {
-  font: normal 700 2em/1.2 "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
+ul li {
+  list-style-type: "»";
+  margin-left: 1.25em;
+  padding-left: 0.5em; }
 
-h3 {
-  font: normal 700 1.5em/1.2 "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
+ol li {
+  list-style-type: decimal;
+  margin-left: 1.5em;
+  padding-left: 0.25em; }
 
-.main-wrapper {
-  position: relative;
-  left: 0;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
+blockquote {
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 1em 0 2em 2em; }
 
-.nav-menu {
-  padding: 0.75em 1.5em; }
-  .nav-menu header {
-    font-size: 1.5em;
-    line-height: 1.5;
-    margin-bottom: 2em; }
+figure {
+  margin-bottom: 1em; }
 
-.calvero-logo {
-  width: 150px;
-  position: fixed;
-  display: inline-block;
-  position: fixed;
-  left: 0;
-  z-index: 9999;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+figcaption {
+  font-size: 0.8em;
+  font-weight: 700; }
 
-.nav-container {
-  width: 250px;
-  height: 100vh;
-  position: fixed;
-  margin-top: 0px;
-  right: -250px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+article {
+  padding-top: 1.5em; }
 
-.btn-nav-container {
-  width: 3em;
-  height: 3em;
-  display: block;
-  position: absolute;
-  right: 250px;
-  z-index: 1;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+.artigo-single {
+  font-family: "Alegreya", Times, Times New Roman, Georgia, serif; }
 
-.btn-nav {
-  margin: 0px auto;
-  width: 40%;
-  height: 3px;
-  display: block;
-  background: #fff;
-  position: relative;
-  top: 1.3em;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
-  .btn-nav:before {
-    content: "";
-    display: block;
-    position: relative;
-    background: #fff;
-    height: 3px;
-    top: -250%; }
-  .btn-nav:after {
-    content: " ";
-    display: block;
-    position: relative;
-    background: #fff;
-    height: 3px;
-    top: 125%; }
+.artigo-conteudo p:first-of-type:first-letter {
+  float: left;
+  font-size: 4.7em; }
 
-.calvero-menu {
-  margin: 0px;
-  padding: 0.5em 1.5em;
-  width: 250px;
-  height: 100vh;
-  position: absolute;
-  z-index: 999;
-  overflow: auto;
-  color: #fff;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
-  .calvero-menu .menu-header {
-    font-size: 1.3em;
-    margin-bottom: 2em; }
-  .calvero-menu ul li {
-    opacity: 0.5;
-    line-height: 1.8; }
-    .calvero-menu ul li a {
-      color: inherit;
-      text-decoration: none; }
-    .calvero-menu ul li:hover {
-      opacity: 1; }
-  .calvero-menu section {
-    padding: 0em 0 2em; }
-    .calvero-menu section:after {
-      content: "";
-      clear: both;
-      margin-top: 2em;
-      width: 1em;
-      height: 3px;
-      display: block;
-      background: #fff; }
-    .calvero-menu section:last-child:after {
-      display: none; }
-  .calvero-menu input {
-    border: 0;
-    background-color: #151515;
-    padding: 1em;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-    .calvero-menu input[type='text'] {
-      background: url("../images/icons/pesquisar-opac-br.png") no-repeat right center/15px; }
-      .calvero-menu input[type='text']:focus {
-        border-bottom: 1px solid #656565;
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        transition: all 0.3s ease; }
-
-.imagem-destaque {
-  background: transparent url() no-repeat top center/cover; }
+blockquote p:first-letter {
+  float: none !important;
+  font-size: 1em !important; }
 
 .row {
   width: 100%;
-  padding: 4em;
+  padding: 2em;
   margin: 0 !important;
   position: relative; }
 
 .bloco {
+  display: block;
   position: relative; }
-
-.bloco-info-destaque {
-  position: absolute;
-  display: inline-block;
-  max-width: 600px;
-  padding: 1em 2.5em;
-  bottom: 10%; }
-  .bloco-info-destaque a {
-    color: inherit; }
-  .bloco-info-destaque .titulo {
-    font-weight: 700; }
-  .bloco-info-destaque .autor {
-    font-weight: 700;
-    text-transform: uppercase; }
-  .bloco-info-destaque:hover {
-    text-decoration: underline; }
-
-.single {
-  font: normal normal 1em/1.5 "Alegreya", Times, Times New Roman, Georgia, serif; }
-  .single .imagem-destaque {
-    height: 60vh;
-    background: transparent url() no-repeat top center/cover; }
-  .single .single-conteudo p:first-child:first-letter {
-    float: left;
-    font-size: 4.7em; }
-  .single p {
-    font-size: 1.3em;
-    margin-bottom: 1em; }
-  .single ul {
-    font-size: 1.3em; }
-  .single b, .single strong {
-    font-size: inherit;
-    font-weight: 700; }
-  .single em, .single italic {
-    font-size: inherit;
-    font-style: italic; }
-  .single blockquote {
-    font-size: 1.25em;
-    font-style: italic;
-    padding-left: 1em;
-    margin: 1.5em 0 1.5em 1.25em;
-    border-left: 2px solid #eee; }
-
-.artigo-single {
-  font: normal normal 1.5em/1.8 "Alegreya", Times, Times New Roman, Georgia, serif; }
-
-.centralizado {
-  margin: 0px auto; }
 
 .limpa-float {
   float: none; }
+
+.centralizado {
+  margin: 0px auto; }
 
 .fundo-preto {
   background: #000; }
@@ -536,12 +397,258 @@ h3 {
 .sans-serif {
   font-family: "Roboto", Helvetica, "Helvetica Neue", sans-serif; }
 
+.main-wrapper {
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+
+.calvero-logo {
+  width: 150px;
+  position: fixed;
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.nav-menu {
+  font-size: 1em;
+  padding: 0.75em 1.5em; }
+  .nav-menu header {
+    line-height: 1.5;
+    margin-bottom: 2em; }
+
+.nav-container {
+  font-size: 0.8em;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  margin-top: 0px;
+  right: -250px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .nav-container ul {
+    display: block; }
+    .nav-container ul li {
+      opacity: 0.5;
+      line-height: 1.8;
+      margin-left: 0;
+      list-style-type: none; }
+      .nav-container ul li a {
+        color: inherit;
+        text-decoration: none; }
+      .nav-container ul li:hover {
+        opacity: 1; }
+
+.btn-nav-container {
+  width: 4em;
+  height: 4em;
+  display: block;
+  position: absolute;
+  right: 250px;
+  z-index: 1;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.btn-nav {
+  margin: 0px auto;
+  width: 30%;
+  height: 2px;
+  display: block;
+  background: #fff;
+  position: relative;
+  top: 45%;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .btn-nav:before {
+    content: "";
+    display: block;
+    position: relative;
+    background: #fff;
+    height: 2px;
+    top: -210%; }
+  .btn-nav:after {
+    content: " ";
+    display: block;
+    position: relative;
+    background: #fff;
+    height: 2px;
+    top: 100%; }
+
+.turn-x {
+  background: transparent !important; }
+  .turn-x:before {
+    top: -200%;
+    transform: rotate(45deg);
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    transition: all 0.6s ease; }
+  .turn-x:after {
+    top: -300%;
+    transform: rotate(-45deg);
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    transition: all 0.6s ease; }
+
+.calvero-menu {
+  margin: 0px;
+  padding: 0.5em 1.5em;
+  width: 250px;
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  overflow: auto;
+  color: #fff; }
+  .calvero-menu .menu-header {
+    font-size: 1.25em;
+    margin-bottom: 2em; }
+  .calvero-menu section {
+    padding: 0em 0 2em; }
+    .calvero-menu section:after {
+      content: "";
+      clear: both;
+      margin-top: 2em;
+      width: 1em;
+      height: 0.15em;
+      display: block;
+      background: #fff; }
+    .calvero-menu section:last-child:after {
+      display: none; }
+  .calvero-menu input {
+    border: 0;
+    background-color: #151515;
+    padding: .5em;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .calvero-menu input[type='text'] {
+      background: url("../images/icons/pesquisar-opac-br.png") no-repeat right center/15px;
+      border-bottom: 1px solid transparent; }
+      .calvero-menu input[type='text']:focus {
+        border-bottom: 1px solid #656565;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease; }
+
+.post-home-destaque {
+  height: 80vh;
+  background: transparent url() no-repeat top center/cover; }
+
+.bloco-info-destaque {
+  position: absolute;
+  display: inline-block;
+  max-width: 600px;
+  padding: 1em 2.5em;
+  bottom: 10%; }
+  .bloco-info-destaque .titulo {
+    font-weight: 700; }
+  .bloco-info-destaque .autor {
+    font-weight: 700;
+    text-transform: uppercase; }
+  .bloco-info-destaque:hover {
+    text-decoration: underline; }
+
+.artigo-single .imagem-destaque {
+  height: 60vh;
+  background: transparent url() no-repeat top center/cover; }
+.artigo-single .categoria-single {
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 700; }
+.artigo-single .autor-single {
+  font-weight: 700; }
+
+.autor-single-footer-container {
+  font-size: inherit;
+  overflow: hidden;
+  margin: 2em 0;
+  padding: 1em 0;
+  border-top: 1px solid #eee; }
+  .autor-single-footer-container img {
+    width: 100%;
+    height: auto; }
+  .autor-single-footer-container .pic {
+    display: block;
+    width: 5em;
+    height: 100%;
+    float: left;
+    margin-right: 1em;
+    overflow: hidden; }
+  .autor-single-footer-container .info {
+    width: 80%;
+    height: 100%;
+    display: block;
+    float: left; }
+  .autor-single-footer-container .nome {
+    font: italic 700 1.25em/1 "Alegreya", Times, Times New Roman, Georgia, serif; }
+  .autor-single-footer-container .bio {
+    font: italic 400 1em/1.8 "Alegreya", Times, Times New Roman, Georgia, serif; }
+
+.comentarios h3 {
+  font-style: italic; }
+
+.page-footer {
+  font-family: "Alegreya", Times, Times New Roman, Georgia, serif;
+  font-size: 0.8em; }
+  .page-footer .footer-logo, .page-footer .footer-pages, .page-footer .footer-cats {
+    float: left; }
+  .page-footer ul li {
+    clear: both; }
+
+.info-404 {
+  padding: 2em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .info-404 p {
+    font-family: "Alegreya", Times, Times New Roman, Georgia, serif;
+    font-style: italic; }
+  .info-404 input {
+    border: 0;
+    padding: .2em 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: #000;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .info-404 input:focus {
+      border-bottom: 1px solid #fff;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  .info-404 input[type=text] {
+    background: transparent url(../images/icons/pesquisar-opac-br.png) no-repeat center right/20px; }
+
 .appear-from-right {
   right: 0;
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -ms-transition: all 0.1s ease;
-  transition: all 0.1s ease; }
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
 
 .push-to-left {
   left: -250px;
@@ -553,26 +660,9 @@ h3 {
 .throw-inside-nav {
   right: 0em;
   z-index: 9999;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
-
-.turn-x {
-  background: transparent !important; }
-  .turn-x:before {
-    top: 0%;
-    transform: rotate(45deg);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
-  .turn-x:after {
-    top: -100%;
-    transform: rotate(-45deg);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
 
 /*# sourceMappingURL=style.css.map */

@@ -74,7 +74,9 @@
                     
                     <div class="calvero-menu fundo-preto texto-branco">
                         <div class="menu-header">Menu</div>
-                        <section class="menu-categorias"><ul><?php echo wp_list_categories( 'title_li='); ?></ul></section>
+                        <section class="menu-categorias"><ul>
+                            <li><a href="<?php echo home_url( '/' ) ?>">Home</a></li>
+                            <?php echo wp_list_categories( 'title_li=' ); ?></ul></section>
                         <section class="menu-pesquisa">
                             <?php get_template_part('searchform'); ?>
                         </section>

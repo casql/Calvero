@@ -4,19 +4,25 @@
  * @since calvero 1.0
  */
 ?>
-<section class="single">
+<section class="artigo-single">
     <div class="imagem-destaque" style="background-image:url(<?php thumb_uri(); ?>)"></div>
-    <article id="post-<?php the_ID(); ?>" <?php post_class( 'artigo col-md-8 col-sm-10 col-xs-10 limpa-float centralizado' ) ?> >
+    <article id="post-<?php the_ID(); ?>" <?php post_class( 'col-md-8 col-sm-10 col-xs-10 limpa-float centralizado' ) ?> >
         <header class="artigo-meta">
-            <p><?php the_category( ', ' ) ?></p>
-            <h1><?php the_title(); ?></h1>
-            <p class="autor"><?php the_author(); ?></p>
+            <p class="categoria-single"><?php the_category( ', ' ) ?></p>
+            <h1 class="titulo-single" ><?php the_title(); ?></h1>
+            <p class="autor-single"><?php the_author(); ?> // <?php the_date(); ?></p>
         </header>
-        <section class="single-conteudo">
+        <section class="artigo-conteudo">
             <?php the_content(); ?>
         </section>
-        <footer class="single-footer">
-            
+        <footer class="artigo-footer">
+            <div class="autor-single-footer-container">
+                <div class="pic"><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?></div>
+                <div class="info">
+                    <div class="nome"><?php echo get_the_author( 'name' ); ?></div>
+                    <div class="bio"><?php echo get_the_author_meta( 'description' ); ?></div>
+                </div>
+            </div>
         </footer>
     </article>
 </section> <?php // Single ?>

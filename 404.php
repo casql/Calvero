@@ -8,39 +8,17 @@
  
 get_header(); ?>
  
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area main-wrapper">
         <div id="content" class="site-content" role="main">
- 
-            <article id="post-0" class="post error404 not-found">
-                <header class="entry-header">
-                    <h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'calvero' ); ?></h1>
-                </header><!-- .entry-header -->
- 
-                <div class="entry-content">
-                    <p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'calvero' ); ?></p>
- 
-                    <?php get_search_form(); ?>
- 
-                    <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
- 
-                    <div class="widget">
-                        <h2 class="widgettitle"><?php _e( 'Most Used Categories', 'calvero' ); ?></h2>
-                        <ul>
-                        <?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
-                        </ul>
-                    </div><!-- .widget -->
- 
-                    <?php
-                    /* translators: %1$s: smilie */
-                    $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'calvero' ), convert_smilies( ':)' ) ) . '</p>';
-                    the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-                    ?>
- 
-                    <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
- 
-                </div><!-- .entry-content -->
-            </article><!-- #post-0 .post .error404 .not-found -->
- 
+            <section> <!-- bloco informativo 404 -->
+                <div class="row " style="text-align:center; height:100vh; background-image:url(<?php echo get_template_directory_uri(); ?>/images/sample-riviera.png); padding-top:35vh;">
+                    <div class="info-404 col-md-8 col-sm-10 fundo-preto texto-branco limpa-float centralizado">
+                        <h1>Bem-vindo à Riviera.<br>Seu quarto é o 404.</h1>
+                        <p>Parece que a página que você estava procurando não existe, mas sinta-se à vontade, se quiser ficar. Para sair, uma pesquisa pode ajudar a encontrar o que quer.</p>
+                        <?php get_search_form( 'true' ); ?>
+                    </div>
+                </div>
+            </section> <!-- bloco informativo 404 -->
         </div><!-- #content .site-content -->
     </div><!-- #primary .content-area -->
  

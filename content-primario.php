@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'row imagem-destaque'); ?> style="background-image: url(<?php thumb_uri(); ?>); height:500px">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'row post-home-destaque'); ?> style="background-image: url(<?php thumb_uri(); ?>);">
     <!-- bloco com título do conteúdo -->
     <div class="bloco bloco-info-destaque fundo-preto">
         <p class="categoria texto-amarelo serif"><?php the_category( ', ' , 'calvero' ); ?></p>

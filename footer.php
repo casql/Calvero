@@ -11,15 +11,23 @@
 
 </div><!-- #main .site-main -->
  
-<footer id="colophon" class="site-footer" role="contentinfo">
+<footer id="colophon" class="site-footer row page-footer fundo-preto texto-branco" role="contentinfo">
     <div class="site-info">
-        <?php do_action( 'calvero_credits' ); ?>
-        <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'calvero' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'calvero' ), 'WordPress' ); ?></a>
-        <span class="sep"> | </span>
-        <?php printf( __( 'Theme: %1$s by %2$s.', 'calvero' ), 'calvero', '<a href="http://themecalveror.com/" rel="designer">Themecalveror</a>' ); ?>
+        <?php // Orgulhosamente funcionando com Wordpress (http://www.wordpress.org) ?>
+        
+        <div class="footer-logo col-md-3 col-sm-3 col-xs-12"></div>
+        <div class="footer-pages col-md-3 col-sm-3 col-xs-12"
+            <ul><?php echo wp_list_pages( 'title_li=' ); ?></ul>
+        </div>
+        <div class="footer-cats col-md-3 col-sm-3 col-xs-12">
+            <ul><?php echo wp_list_categories(); ?></ul>
+        </div>
     </div><!-- .site-info -->
+    
 </footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
+<?php wp_footer(); ?>
+
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.3.min.js"></script>
 <script>
     $(document).ready(function(){
@@ -32,6 +40,5 @@
         });
     });
 </script>
-<?php wp_footer(); ?>
 </body>
 </html>

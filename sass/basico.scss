@@ -1,89 +1,66 @@
 // Folha de estilos com os elementos básicos da página
 
+// Medida referencial: body --> 14px/1.5
 
-* {
-    margin:0;
-    padding:0;
-    font-size: 14px;
-    line-height: 1.8;
-}
+// Elementos básicos = Framework
 
-// Definição básica de tipografia do corpo da página
-body {
-    font: normal 400 1em/1.5 $sans-serif;
-}
+// Faixas de conteúdo
+.row {width:100%; padding: 2em; margin:0 !important; position:relative;}
 
-// Define os principais elementos como blocos
-header, footer, nav, section, h1, h2, h3, h4, h5, h6, .row {
-    display: block;
-}
+// Blocos de conteúdo
+.bloco {display: block; position:relative;}
+
+// Limpar Floats
+.limpa-float {float:none;}
+
+// Alinhar blocos ao centro
+.centralizado {margin: 0px auto;}
+
+// Cores de Fundos
+.fundo-preto {background: $preto;}
+.fundo-branco {background: $branco;}
+.fundo-cinza {background: $cinza-claro;}
+
+// Cores de texto
+.texto-branco {color:$branco}
+.texto-preto {color:$preto}
+.texto-amarelo {color: $amarelo-calvero}
+
+// Famíias de fontes
+.serif {font-family: $serif;}
+.sans-serif {font-family: $sans-serif;}
+
+// ----------------------------------
 
 
-// Tipografia
-
-// Parágrafo
-p {font-size:1em;}
-
-ul{
-    margin-left:1.5em;
-    
-    li {
-        list-style-type: "»";
-        font-size: .875em;
-        line-height: 1.8;
-    }
-}
-
-ol{
-    list-style: decimal;
-    margin-left:1.5em;
-    
-    li {
-        font-size: .875em;
-        line-height: 1.8;
-    }
-}
-
-blockquote {margin-left:2em;}
-
-strong, b {font-weight: 700;}
-italic, em {}
-u {}
-
-// Definição básica para estilo de links (estilo um reset)
-a {color: inherit;text-decoration:underline;}
-
-h1 {font: normal 700 2.5em/1.2 $sans-serif}
-h2 {font: normal 700 2em/1.2 $sans-serif}
-h3 {font:normal 700 1.5em/1.2 $sans-serif}
-
-// Principal container da página
+// Principal container de conteúdo
 .main-wrapper {
     position:relative;
-    left:0;
+    left:0; // Possibilita a animação quando o menu é aberto
     
     // Mixin Transition
     @include transition(all, 0.2s, ease);
 }
 
-// Definições para o menu de navegação
+// Definição da div do logo em posição fixa
+.calvero-logo {width:150px;position:fixed; display: inline-block; position: fixed; left: 0; z-index:9999; @include transition( all, 0.3s, ease)}
 
+// Definições para o menu de navegação
 .nav-menu {
+    font-size: 1em;
     padding:0.75em 1.5em;
     
     header {
-        font-size: 1.5em;
         line-height: 1.5;
         
         margin-bottom: 2em;
     }
 }
 
-// Definição da div do logo em posição fixa
-.calvero-logo {width:150px;position:fixed; display: inline-block; position: fixed; left: 0; z-index:9999; @include transition( all, 0.3s, ease)}
-
 // Definições dos elementos que compoem a nav
 .nav-container {
+    font-size: 0.8em;
+    
     width:250px;
     height:100vh;
     position:fixed;
@@ -91,12 +68,31 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
     right: -250px;
     
     @include transition(all, 0.3s, ease);
-}
+    
+    ul {
+        display: block;
+        
+        li {
+            opacity: 0.5;
+            line-height: 1.8;
+            margin-left:0;
+            list-style-type: none;
+            a {
+                color:inherit;
+                text-decoration: none;
+            }
+            
+            &:hover{
+                opacity:1;
+            }
+        }
+    }
+} // .nav-container
 
 // Container do botão do menu
 .btn-nav-container {
-    width:3em;
-    height:3em;
+    width:4em;
+    height:4em;
     
     display: block;
     position: absolute;
@@ -105,25 +101,25 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
     
     cursor: pointer;
     
-    @include transition(all, 0.3s, ease);
+    @include transition(all, 0.5s, ease);
 }
 
 .btn-nav {
     margin:0px auto;
-    width:40%;
-    height:3px;
+    width:30%;
+    height:2px;
     display: block;
     background: $branco;
     position:relative;
-    top:1.3em;
+    top:45%;
     
     &:before {
         content:"";
         display: block;
         position: relative;
         background: $branco;
-        height: 3px;
-        top:-250%;
+        height: 2px;
+        top:-210%;
     }
     
     &:after{
@@ -131,12 +127,20 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
         display: block;
         position: relative;
         background: $branco;
-        height: 3px;
-        top:125%;
+        height: 2px;
+        top:100%;
     }
     
     // Mixin Transition
     @include transition(all, 0.3s, ease);
+}
+
+.turn-x {
+    background: transparent !important;
+    // Before
+    &:before {top:-200%; transform: rotate(45deg); @include transition(all, .6s, ease);}
+    // After
+    &:after{top:-300%; transform: rotate(-45deg); @include transition(all, .6s, ease);}
 }
 
 .calvero-menu {
@@ -152,24 +156,10 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
     color:$branco;
     
     .menu-header {
-        font-size:1.3em;
+        font-size: 1.25em;
         margin-bottom:2em;
     }
-    
-    ul {
-        li {
-            opacity: 0.5;
-            line-height: 1.8;
-            a {
-                color:inherit;
-                text-decoration: none;
-            }
-            
-            &:hover{
-                opacity:1;
-            }
-        }
-    }
+
     
     section{
         padding: 0em 0 2em;
@@ -179,7 +169,7 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
             clear: both;
             margin-top:2em;
             width:1em;
-            height: 3px;
+            height:0.15em;
             display: block;
             background: $branco;
         }
@@ -195,38 +185,29 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
     input {
         border:0;
         background-color: #151515;
-        padding:1em;
+        padding:.5em;
         
         @include transition(all, 0.3s, ease);
         
         &[type='text']{
             background: url('../images/icons/pesquisar-opac-br.png') no-repeat right center / 15px;
+            border-bottom: 1px solid transparent;
             &:focus {
                 border-bottom: 1px solid #656565;
                 @include transition(all, 0.3s, ease);
             }
         }
+        
+        @include transition(all, 0.3s, ease);
     }
-    
-    @include transition(all, 0.3s, ease);
 }
+    
 
 // Div com imagem inteira
 
-.imagem-destaque {
+.post-home-destaque {
+    height:80vh;
     background: transparent url() no-repeat top center / cover;
-}
-
-.row {
-    width:100%;
-    padding: 4em;
-    margin:0 !important;
-    
-    position:relative;
-}
-
-.bloco {
-    position:relative;
 }
 
 .bloco-info-destaque {
@@ -235,8 +216,6 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
     max-width:600px;
     padding:1em 2.5em;
     bottom:10%;
-    
-    a {color:inherit}
     
     .categoria {
         
@@ -255,57 +234,75 @@ h3 {font:normal 700 1.5em/1.2 $sans-serif}
     }
 }
 
-// Artigos
-.single {
-    font:normal normal 1em/1.5 $serif;
+// Artigos single.php
+.artigo-single {
     
-    .imagem-destaque {height:60vh; background: transparent url() no-repeat top center / cover}
-    .single-conteudo {
+    .imagem-destaque {height:60vh; background: transparent url() no-repeat top center / cover }
+    
+    .categoria-single {
+        font-size: 0.875em;
+        text-transform: uppercase; 
+        font-weight: 700
     }
     
-    .single-conteudo p{&:first-child{&:first-letter{float:left;font-size:4.7em}}}
+    .autor-single {font-weight: 700;}
+}
+
+.autor-single-footer-container {
+    font-size:inherit;
+    overflow: hidden;
+    margin: 2em 0;
+    padding: 1em 0;
+    border-top: 1px solid $cinza-claro;
     
-    // Tipografia dentro do elemento
-    p {font-size: 1.3em; margin-bottom:1em}
-    ul {font-size:1.3em}
-    b, strong{font-size: inherit; font-weight: 700;}
-    em, italic {font-size:inherit;font-style:italic;}
-    blockquote{font-size:1.25em; font-style: italic; padding-left:1em; margin: 1.5em 0 1.5em 1.25em; border-left: 2px solid $cinza-claro;}
+    img {width:100%; height:auto;}
+    
+    .pic {display: block; width:5em;height:100%;float:left; margin-right: 1em;overflow:hidden}
+    .info {width:80%;height:100%;display: block;float:left;}
+    .nome {font: italic 700 1.25em/1 $serif;}
+    .bio {font: italic 400 1em/1.8 $serif}
+}
+
+.comentarios {
+    h3 {font-style: italic}
+
+}
+
+// Estilos para footer
+.page-footer{
+    font-family: $serif;
+    font-size: 0.8em;   
+    
+    .footer-logo, .footer-pages, .footer-cats {float:left;}
+    
+    ul li {clear: both}
     
 }
 
-.artigo-single {
-    font: normal normal 1.5em/1.8 $serif;
+// Estilos para 404
+.info-404 {
+    padding:2em;
+    
+    h1{}
+    p{font-family: $serif;font-style: italic;}
+    
+    input{
+        border:0; 
+        padding:.2em 1em; 
+        border-bottom:1px solid rgba(255,255,255,0.4); 
+        background-color:$preto;    
+        
+        &:focus{border-bottom:1px solid $branco; @include transition(all, 0.3s, ease)}
+        
+        @include transition(all, 0.3s, ease);
+    }
+    
+    input[type=text]{background:transparent url(../images/icons/pesquisar-opac-br.png) no-repeat center right / 20px;}
+    
+    @include transition(all, 0.3s, ease);
 }
-
-// Alinhar blocos ao centro
-.centralizado {margin: 0px auto;}
-
-// Limpar Floats
-.limpa-float {float:none;}
-
-// Cores de Fundos
-.fundo-preto {background: $preto;}
-.fundo-branco {background: $branco;}
-.fundo-cinza {background: $cinza-claro;}
-
-// Cores de texto
-.texto-branco {color:$branco}
-.texto-preto {color:$preto}
-.texto-amarelo {color: $amarelo-calvero}
-
-// Famíias de fontes
-.serif {font-family: $serif;}
-.sans-serif {font-family: $sans-serif;}
 
 // Classes referentes à funçao de abertura do menu
-.appear-from-right {right:0; @include transition(all, 0.1s, ease);}
+.appear-from-right {right:0; @include transition(all, 0.4s, ease);}
 .push-to-left {left: -250px; @include transition(all, 0.5s, ease);}
-.throw-inside-nav {right: 0em; z-index:9999; @include transition(all, 0.3s, ease);}
-.turn-x {
-    background: transparent !important;
-    // Before
-    &:before {top:0%; transform: rotate(45deg); @include transition(all, 0.5s, ease);}
-    // After
-    &:after{top:-100%; transform: rotate(-45deg); @include transition(all, 0.5s, ease);}
-}
+.throw-inside-nav {right: 0em; z-index:9999; @include transition(all, 0.2s, ease);}
