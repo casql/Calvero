@@ -119,7 +119,7 @@
         position: relative;
         background: $branco;
         height: 2px;
-        top:-210%;
+        top:-260%;
     }
     
     &:after{
@@ -128,7 +128,7 @@
         position: relative;
         background: $branco;
         height: 2px;
-        top:100%;
+        top:160%;
     }
     
     // Mixin Transition
@@ -217,21 +217,62 @@
     padding:1em 2.5em;
     bottom:10%;
     
-    .categoria {
-        
+    a {
+        text-decoration:none;
     }
     
-    .titulo {
-        font-weight: 700;
-    }
-    .autor {
+    .categoria {
+        font-size: .8em;
         font-weight: 700;
         text-transform: uppercase;
     }
     
+    .titulo {
+        font-weight: 700;
+        display: inline;
+        border-bottom: 1px solid transparent;
+        line-height: 1;
+    }
+    .autor {
+        font-size: .8em;
+        font-weight: 700;
+        margin-top:0.5em;
+        text-transform: uppercase;
+    }
+    
     &:hover{
+        bottom:10.5%;
+        
+        .titulo {
+            border-bottom:1px solid $branco;
+        }   
+    }
+    
+    // Mixin transform
+    @include transition(all, 0.2s, ease);
+}
+
+// Bloco secundario da home
+.bloco-secundario {
+    margin-bottom:0;
+    padding: 1em;
+    
+    a{text-decoration: none;}
+    
+    // Elementos internos
+    .categoria {font-size: 0.8em; font-weight: 700; text-transform: uppercase;}
+    .titulo {font-size: 1.5em}
+    .autor {}
+    
+    &:after{content:""; width:1em; height:3px; background:$preto;position:absolute;}
+    
+    &:hover{
+        background-color:$amarelo-calvero;
         text-decoration: underline;
     }
+    
+    // Mixxxin Transition
+    @include transition(all, 0.2s, ease);
 }
 
 // Artigos single.php
@@ -271,12 +312,17 @@
 // Estilos para footer
 .page-footer{
     font-family: $serif;
-    font-size: 0.8em;   
+    font-size: 0.8em;
     
-    .footer-logo, .footer-pages, .footer-cats {float:left;}
+    list-style-type: "»";
     
-    ul li {clear: both}
-    
+    .footer-logo, .footer-pages, .footer-cats {
+        float:left;
+        
+        ul {
+            li{margin-left: 0;}
+        }
+    }
 }
 
 // Estilos para 404

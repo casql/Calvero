@@ -19,7 +19,11 @@ h4 {font: italic 700 1.25em/1.8 $serif; margin-bottom: .5em;}
 
 p, b, strong, em, italic, ul, ol, li, a, u, del, span, blockquote {font-size: inherit;}
 
-p {margin:0 0 1em;}
+p {margin:0 0 1em;
+    a{ font-weight: 700;
+        &:hover{opacity:0.7;}
+    }
+}
 
 b, strong {font-weight: 700; font-weight: bold;}
 em, italic {font-style: italic;}
@@ -27,12 +31,12 @@ u {text-decoration: underline;}
 del {text-decoration: line-through;}
 
 a {color:inherit; text-decoration:underline;
-    &:hover{text-decoration:underline;}
+    &:hover{text-decoration:underline; color:inherit;}
 }
 
 ul, ol {
     margin: -0.5em 0 1.3em;
-    display: inline-block;
+    display: block;
 }
 
 ul li {list-style-type: "»"; margin-left: 1.25em; padding-left: 0.5em;}

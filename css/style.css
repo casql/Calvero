@@ -297,6 +297,10 @@ p, b, strong, em, italic, ul, ol, li, a, u, del, span, blockquote {
 
 p {
   margin: 0 0 1em; }
+  p a {
+    font-weight: 700; }
+    p a:hover {
+      opacity: 0.7; }
 
 b, strong {
   font-weight: 700;
@@ -315,11 +319,12 @@ a {
   color: inherit;
   text-decoration: underline; }
   a:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: inherit; }
 
 ul, ol {
   margin: -0.5em 0 1.3em;
-  display: inline-block; }
+  display: block; }
 
 ul li {
   list-style-type: "»";
@@ -479,14 +484,14 @@ blockquote p:first-letter {
     position: relative;
     background: #fff;
     height: 2px;
-    top: -210%; }
+    top: -260%; }
   .btn-nav:after {
     content: " ";
     display: block;
     position: relative;
     background: #fff;
     height: 2px;
-    top: 100%; }
+    top: 160%; }
 
 .turn-x {
   background: transparent !important; }
@@ -560,13 +565,55 @@ blockquote p:first-letter {
   display: inline-block;
   max-width: 600px;
   padding: 1em 2.5em;
-  bottom: 10%; }
-  .bloco-info-destaque .titulo {
-    font-weight: 700; }
-  .bloco-info-destaque .autor {
+  bottom: 10%;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .bloco-info-destaque a {
+    text-decoration: none; }
+  .bloco-info-destaque .categoria {
+    font-size: .8em;
     font-weight: 700;
     text-transform: uppercase; }
+  .bloco-info-destaque .titulo {
+    font-weight: 700;
+    display: inline;
+    border-bottom: 1px solid transparent;
+    line-height: 1; }
+  .bloco-info-destaque .autor {
+    font-size: .8em;
+    font-weight: 700;
+    margin-top: 0.5em;
+    text-transform: uppercase; }
   .bloco-info-destaque:hover {
+    bottom: 10.5%; }
+    .bloco-info-destaque:hover .titulo {
+      border-bottom: 1px solid #fff; }
+
+.bloco-secundario {
+  margin-bottom: 0;
+  padding: 1em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .bloco-secundario a {
+    text-decoration: none; }
+  .bloco-secundario .categoria {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase; }
+  .bloco-secundario .titulo {
+    font-size: 1.5em; }
+  .bloco-secundario:after {
+    content: "";
+    width: 1em;
+    height: 3px;
+    background: #000;
+    position: absolute; }
+  .bloco-secundario:hover {
+    background-color: #FEE10A;
     text-decoration: underline; }
 
 .artigo-single .imagem-destaque {
@@ -610,11 +657,12 @@ blockquote p:first-letter {
 
 .page-footer {
   font-family: "Alegreya", Times, Times New Roman, Georgia, serif;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  list-style-type: "»"; }
   .page-footer .footer-logo, .page-footer .footer-pages, .page-footer .footer-cats {
     float: left; }
-  .page-footer ul li {
-    clear: both; }
+    .page-footer .footer-logo ul li, .page-footer .footer-pages ul li, .page-footer .footer-cats ul li {
+      margin-left: 0; }
 
 .info-404 {
   padding: 2em;
