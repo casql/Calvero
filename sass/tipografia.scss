@@ -55,7 +55,7 @@ figcaption {font-size:0.8em;font-weight: 700}
 article {padding-top:1.5em;}
 
 // DROP CAPS em artigos
-.artigo-single {font-family: $serif;}
+.artigo-single, .artigo-page {font-family: $serif;}
 
 .artigo-conteudo{
     p:first-of-type{&:first-letter{float:left;font-size: 4.7em;}}}

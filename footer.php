@@ -20,7 +20,7 @@
             <ul><?php echo wp_list_pages( 'title_li=' ); ?></ul>
         </div>
         <div class="bloco footer-cats col-md-3 col-sm-3 col-xs-12">
-            <ul><?php echo wp_list_categories(); ?></ul>
+            <ul><?php echo wp_list_categories( 'title_li=' ); ?></ul>
         </div>
     </div><!-- .site-info -->
     

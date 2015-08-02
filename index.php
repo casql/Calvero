@@ -40,13 +40,16 @@ get_header(); ?>
             $secundarios = new WP_Query( 'offset=1' );
 
             if ( $secundarios -> have_posts() ) {
+                echo '<div class="row fundo-cinza" >';
                 while ( $secundarios -> have_posts() ){
                     $secundarios -> the_post();
                     get_template_part( 'content' , 'secundario' );
                 } // php while   
+                
+                echo '</div>'; //fecha a div row fundo cinza 
             } else {
-                echo "Por hoje é só, pessoal!";
-            }
+                // do nothing;
+            }   
             wp_reset_postdata();
         ?> <?php // $secundarios ?>
         

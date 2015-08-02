@@ -8,7 +8,7 @@
 .row {width:100%; padding: 2em; margin:0 !important; position:relative;}
 
 // Blocos de conteúdo
-.bloco {display: block; position:relative;}
+.bloco {display: block;}
 
 // Limpar Floats
 .limpa-float {float:none;}
@@ -254,6 +254,7 @@
 
 // Bloco secundario da home
 .bloco-secundario {
+    min-height: 13em;
     margin-bottom:0;
     padding: 1em;
     
@@ -276,9 +277,13 @@
 }
 
 // Artigos single.php
-.artigo-single {
+.artigo-single, .artigo-page {    
+    .imagem-destaque {
+        height:60vh;
+        background: transparent url() no-repeat top center / cover;
+        }
     
-    .imagem-destaque {height:60vh; background: transparent url() no-repeat top center / cover }
+    .em-page {height:21vh;}
     
     .categoria-single {
         font-size: 0.875em;
@@ -292,9 +297,9 @@
 .autor-single-footer-container {
     font-size:inherit;
     overflow: hidden;
-    margin: 2em 0;
-    padding: 1em 0;
-    border-top: 1px solid $cinza-claro;
+    margin: 1.5em 0 1em 0;
+    padding: 1em 0 2em;
+    border-bottom: 1px solid $cinza-claro;
     
     img {width:100%; height:auto;}
     
@@ -305,6 +310,7 @@
 }
 
 .comentarios {
+    margin-bottom:1.5em;
     h3 {font-style: italic}
 
 }

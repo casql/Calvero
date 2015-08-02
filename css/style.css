@@ -351,7 +351,7 @@ figcaption {
 article {
   padding-top: 1.5em; }
 
-.artigo-single {
+.artigo-single, .artigo-page {
   font-family: "Alegreya", Times, Times New Roman, Georgia, serif; }
 
 .artigo-conteudo p:first-of-type:first-letter {
@@ -369,8 +369,7 @@ blockquote p:first-letter {
   position: relative; }
 
 .bloco {
-  display: block;
-  position: relative; }
+  display: block; }
 
 .limpa-float {
   float: none; }
@@ -592,6 +591,7 @@ blockquote p:first-letter {
       border-bottom: 1px solid #fff; }
 
 .bloco-secundario {
+  min-height: 13em;
   margin-bottom: 0;
   padding: 1em;
   -webkit-transition: all 0.2s ease;
@@ -616,22 +616,24 @@ blockquote p:first-letter {
     background-color: #FEE10A;
     text-decoration: underline; }
 
-.artigo-single .imagem-destaque {
+.artigo-single .imagem-destaque, .artigo-page .imagem-destaque {
   height: 60vh;
   background: transparent url() no-repeat top center/cover; }
-.artigo-single .categoria-single {
+.artigo-single .em-page, .artigo-page .em-page {
+  height: 21vh; }
+.artigo-single .categoria-single, .artigo-page .categoria-single {
   font-size: 0.875em;
   text-transform: uppercase;
   font-weight: 700; }
-.artigo-single .autor-single {
+.artigo-single .autor-single, .artigo-page .autor-single {
   font-weight: 700; }
 
 .autor-single-footer-container {
   font-size: inherit;
   overflow: hidden;
-  margin: 2em 0;
-  padding: 1em 0;
-  border-top: 1px solid #eee; }
+  margin: 1.5em 0 1em 0;
+  padding: 1em 0 2em;
+  border-bottom: 1px solid #eee; }
   .autor-single-footer-container img {
     width: 100%;
     height: auto; }
@@ -652,8 +654,10 @@ blockquote p:first-letter {
   .autor-single-footer-container .bio {
     font: italic 400 1em/1.8 "Alegreya", Times, Times New Roman, Georgia, serif; }
 
-.comentarios h3 {
-  font-style: italic; }
+.comentarios {
+  margin-bottom: 1.5em; }
+  .comentarios h3 {
+    font-style: italic; }
 
 .page-footer {
   font-family: "Alegreya", Times, Times New Roman, Georgia, serif;
