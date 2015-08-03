@@ -694,7 +694,14 @@ blockquote p:first-letter, .wp-caption p:first-letter {
     opacity: 0.8; }
 
 .arquivo-wrapper, .busca-wrapper {
-  padding-top: 6.5em; }
+  padding-top: 6.5em;
+  min-height: 80vh; }
+  .arquivo-wrapper #s, .busca-wrapper #s {
+    border: 0;
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 0.5em 1em;
+    background: transparent url(../images/icons/pesquisar-pr.png) no-repeat center right/15px; }
 
 .page-footer {
   font-family: "Alegreya", Times, Times New Roman, Georgia, serif;

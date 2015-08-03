@@ -331,6 +331,17 @@
 
 .arquivo-wrapper, .busca-wrapper{
     padding-top:6.5em;
+    
+    min-height: 80vh;
+    
+    #s {
+        border:0;
+        border-bottom: 1px solid $cinza-claro;
+        display: block;
+        padding: 0.5em 1em;
+        
+        background: transparent url(../images/icons/pesquisar-pr.png) no-repeat center right / 15px;
+    }
 }
 
 // Estilos para footer

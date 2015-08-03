@@ -9,9 +9,12 @@
  */
 ?>
  
-<article id="post-0" class="post no-results not-found">
+<section class="arquivo-wrapper row fundo-branco">     
+<div class="col-md-10 col-sm-10 col-xs-12 limpa-float centralizado">    
+
+<article id="post-0" class="post no-results not-found">  
     <header class="entry-header">
-        <h1 class="entry-title"><?php _e( 'Nothing Found', 'calvero' ); ?></h1>
+        <h1 class="entry-title"><?php _e( 'Ops, desculpe, mas...', 'calvero' ); ?></h1>
     </header><!-- .entry-header -->
  
     <div class="entry-content">
@@ -21,7 +24,7 @@
  
         <?php elseif ( is_search() ) : ?>
  
-            <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'calvero' ); ?></p>
+            <p class="serif"><?php _e( 'sua busca não retornou nenhum resultado. Quer tentar novamente?.', 'calvero' ); ?></p>
             <?php get_search_form(); ?>
  
         <?php else : ?>
@@ -32,3 +35,6 @@
         <?php endif; ?>
     </div><!-- .entry-content -->
 </article><!-- #post-0 .post .no-results .not-found -->
+    
+</div>
+</section>
