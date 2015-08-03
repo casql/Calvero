@@ -317,7 +317,11 @@ del {
 
 a {
   color: inherit;
-  text-decoration: underline; }
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
   a:hover {
     text-decoration: underline;
     color: inherit; }
@@ -356,8 +360,17 @@ article {
 
 .artigo-conteudo p:first-of-type:first-letter {
   float: left;
-  font-size: 4.7em; }
-
+  font-size: 4em;
+  margin-right: 0.1em;
+  margin-top: 0;
+  -webikit-margin-top: 0;
+  line-height: 0.9;
+  -webkit-line-height: 0.9; }
+@-moz-document url-prefix() {
+  .artigo-conteudo p:first-of-type:first-letter {
+    font-size: 4.1em;
+    margin-top: 0.1em;
+    line-height: 1; } }
 blockquote p:first-letter {
   float: none !important;
   font-size: 1em !important; }
@@ -435,6 +448,7 @@ blockquote p:first-letter {
   position: fixed;
   margin-top: 0px;
   right: -250px;
+  z-index: 999;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -472,7 +486,7 @@ blockquote p:first-letter {
   display: block;
   background: #fff;
   position: relative;
-  top: 45%;
+  top: 50%;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -483,14 +497,14 @@ blockquote p:first-letter {
     position: relative;
     background: #fff;
     height: 2px;
-    top: -260%; }
+    top: -250%; }
   .btn-nav:after {
     content: " ";
     display: block;
     position: relative;
     background: #fff;
     height: 2px;
-    top: 160%; }
+    top: 150%; }
 
 .turn-x {
   background: transparent !important; }
@@ -511,7 +525,7 @@ blockquote p:first-letter {
 
 .calvero-menu {
   margin: 0px;
-  padding: 0.5em 1.5em;
+  padding: 0.8em 1.5em;
   width: 250px;
   height: 100vh;
   position: absolute;
@@ -665,8 +679,10 @@ blockquote p:first-letter {
   list-style-type: "»"; }
   .page-footer .footer-logo, .page-footer .footer-pages, .page-footer .footer-cats {
     float: left; }
-    .page-footer .footer-logo ul li, .page-footer .footer-pages ul li, .page-footer .footer-cats ul li {
-      margin-left: 0; }
+    .page-footer .footer-logo ul, .page-footer .footer-pages ul, .page-footer .footer-cats ul {
+      margin-top: 0; }
+      .page-footer .footer-logo ul li, .page-footer .footer-pages ul li, .page-footer .footer-cats ul li {
+        margin-left: 0; }
 
 .info-404 {
   padding: 2em;

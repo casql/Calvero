@@ -15,8 +15,8 @@
     <div class="site-info">
         <?php // Orgulhosamente funcionando com Wordpress (http://www.wordpress.org) ?>
         
-        <div class="bloco footer-logo col-md-3 col-sm-3 col-xs-12"></div>
-        <div class="bloco footer-pages col-md-3 col-sm-3 col-xs-12"
+<!--        <div class="bloco footer-logo col-md-3 col-sm-3 col-xs-12"></div>-->
+        <div class="bloco footer-pages col-md-3 col-sm-3 col-xs-12">
             <ul><?php echo wp_list_pages( 'title_li=' ); ?></ul>
         </div>
         <div class="bloco footer-cats col-md-3 col-sm-3 col-xs-12">

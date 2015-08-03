@@ -66,6 +66,7 @@
     position:fixed;
     margin-top:0px;
     right: -250px;
+    z-index:999;
     
     @include transition(all, 0.3s, ease);
     
@@ -111,7 +112,7 @@
     display: block;
     background: $branco;
     position:relative;
-    top:45%;
+    top:50%;
     
     &:before {
         content:"";
@@ -119,7 +120,7 @@
         position: relative;
         background: $branco;
         height: 2px;
-        top:-260%;
+        top:-250%;
     }
     
     &:after{
@@ -128,7 +129,7 @@
         position: relative;
         background: $branco;
         height: 2px;
-        top:160%;
+        top:150%;
     }
     
     // Mixin Transition
@@ -146,7 +147,7 @@
 .calvero-menu {
     // Definições principais
     margin: 0px;
-    padding: 0.5em 1.5em;
+    padding: 0.8em 1.5em;
     width:250px;
     height:100vh;
     position:absolute;
@@ -326,6 +327,7 @@
         float:left;
         
         ul {
+            margin-top:0;
             li{margin-left: 0;}
         }
     }
