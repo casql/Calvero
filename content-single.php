@@ -10,7 +10,7 @@
         <header class="artigo-meta">
             <p class="categoria-single"><?php the_category( ', ' ) ?></p>
             <h1 class="titulo-single" ><?php the_title(); ?></h1>
-            <p class="autor-single"><?php the_author(); ?> // <?php the_date(); ?></p>
+            <p class="autor-single"><?php echo the_author_posts_link(); ?> // <?php the_date(); ?></p>
         </header>
         <section class="artigo-conteudo">
             <?php the_content(); ?>

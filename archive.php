@@ -14,22 +14,25 @@ get_header(); ?>
 <div id="content" class="site-content" role="main">
  
 <?php if ( have_posts() ) : ?>
+    
+<section class="arquivo-wrapper row fundo-branco">     
+<div class="col-md-10 col-sm-10 col-xs-12 limpa-float centralizado">  
  
 <header class="page-header">
     <h1 class="page-title">
         <?php
             if ( is_category() ) {
-                printf( __( 'Category Archives: %s', 'calvero' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+                printf( __( 'Categoria: %s', 'calvero' ), '<span>' . single_cat_title( '', false ) . '</span>' );
  
             } elseif ( is_tag() ) {
-                printf( __( 'Tag Archives: %s', 'calvero' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+                printf( __( 'Tag: %s', 'calvero' ), '<span>' . single_tag_title( '', false ) . '</span>' );
  
             } elseif ( is_author() ) {
                 /* Queue the first post, that way we know
                  * what author we're dealing with (if that is the case).
                 */
                 the_post();
-                printf( __( 'Author Archives: %s', 'calvero' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+                printf( __( 'Posts de %s', 'calvero' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
                 /* Since we called the_post() above, we need to
                  * rewind the loop back to the beginning that way
                  * we can run the loop properly, in full.
@@ -77,7 +80,7 @@ get_header(); ?>
          * If you want to overload this in a child theme then include a file
          * called content-___.php (where ___ is the Post Format name) and that will be used instead.
          */
-        get_template_part( 'content', get_post_format() );
+        get_template_part( 'content', 'arquivo' );
     ?>
  
 <?php endwhile; ?>
@@ -88,10 +91,12 @@ get_header(); ?>
  
 <?php get_template_part( 'no-results', 'archive' ); ?>
  
-<?php endif; ?>
- 
+<?php endif; ?> 
+
+</div>    
+</section>    
+    
 </div><!-- #content .site-content -->
 </section><!-- #primary .content-area -->
  
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

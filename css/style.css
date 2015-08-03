@@ -326,6 +326,9 @@ a {
     text-decoration: underline;
     color: inherit; }
 
+img {
+  max-width: 100%; }
+
 ul, ol {
   margin: -0.5em 0 1.3em;
   display: block; }
@@ -371,18 +374,24 @@ article {
     font-size: 4.1em;
     margin-top: 0.1em;
     line-height: 1; } }
-blockquote p:first-letter {
+blockquote p:first-letter, .wp-caption p:first-letter {
   float: none !important;
-  font-size: 1em !important; }
+  font-size: 1em !important;
+  margin: auto !important; }
+
+.wp-caption {
+  font-size: 0.8em;
+  margin-bottom: 0.5em; }
 
 .row {
   width: 100%;
   padding: 2em;
-  margin: 0 !important;
+  margin: 0;
   position: relative; }
 
 .bloco {
-  display: block; }
+  display: block;
+  padding: 1em; }
 
 .limpa-float {
   float: none; }
@@ -613,7 +622,8 @@ blockquote p:first-letter {
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease; }
   .bloco-secundario a {
-    text-decoration: none; }
+    text-decoration: none;
+    font-weight: inherit; }
   .bloco-secundario .categoria {
     font-size: 0.8em;
     font-weight: 700;
@@ -627,8 +637,9 @@ blockquote p:first-letter {
     background: #000;
     position: absolute; }
   .bloco-secundario:hover {
-    background-color: #FEE10A;
-    text-decoration: underline; }
+    background-color: #FEE10A; }
+    .bloco-secundario:hover .titulo {
+      text-decoration: underline; }
 
 .artigo-single .imagem-destaque, .artigo-page .imagem-destaque {
   height: 60vh;
@@ -673,16 +684,28 @@ blockquote p:first-letter {
   .comentarios h3 {
     font-style: italic; }
 
+#nav-below, #nav-above {
+  margin: 0;
+  padding: 1em; }
+  #nav-below a, #nav-above a {
+    font-family: "Alegreya", Times, Times New Roman, Georgia, serif;
+    font-weight: 700; }
+  #nav-below a:hover, #nav-above a:hover {
+    opacity: 0.8; }
+
+.arquivo-wrapper, .busca-wrapper {
+  padding-top: 6.5em; }
+
 .page-footer {
   font-family: "Alegreya", Times, Times New Roman, Georgia, serif;
-  font-size: 0.8em;
-  list-style-type: "»"; }
+  font-size: 0.8em; }
   .page-footer .footer-logo, .page-footer .footer-pages, .page-footer .footer-cats {
-    float: left; }
+    float: left;
+    margin-left: 0; }
     .page-footer .footer-logo ul, .page-footer .footer-pages ul, .page-footer .footer-cats ul {
       margin-top: 0; }
       .page-footer .footer-logo ul li, .page-footer .footer-pages ul li, .page-footer .footer-cats ul li {
-        margin-left: 0; }
+        margin-left: 1em; }
 
 .info-404 {
   padding: 2em;

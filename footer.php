@@ -17,10 +17,15 @@
         
 <!--        <div class="bloco footer-logo col-md-3 col-sm-3 col-xs-12"></div>-->
         <div class="bloco footer-pages col-md-3 col-sm-3 col-xs-12">
-            <ul><?php echo wp_list_pages( 'title_li=' ); ?></ul>
+            <ul>
+                <h3>Calvero</h3>
+                <?php echo wp_list_pages( 'title_li=' ); ?></ul>
         </div>
         <div class="bloco footer-cats col-md-3 col-sm-3 col-xs-12">
-            <ul><?php echo wp_list_categories( 'title_li=' ); ?></ul>
+            <ul>
+                <h3>Categorias</h3>
+                <?php echo wp_list_categories( 'title_li=' ); ?>
+            </ul>
         </div>
     </div><!-- .site-info -->
     
